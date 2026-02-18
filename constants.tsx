@@ -18,9 +18,9 @@ import {
 // ASSETS DE CLOUDINARY - Fotos profesionales de bodas reales (alta resolución)
 const CDN = "https://res.cloudinary.com/dkqocgknd/image/upload";
 const CDN_ALT = "https://res.cloudinary.com/dsylu9a7k/image/upload";
-const FULL = `${CDN}/f_auto,q_auto,w_1200`;  // Hero y fondos full-width
-const HQ = `${CDN}/f_auto,q_auto,w_600`;     // Secciones principales
-const CARD = `${CDN}/f_auto,q_auto,w_500`;    // Cards y thumbnails
+const FULL = `${CDN}/f_auto,q_85,w_1920`;    // Hero y fondos full-width
+const HQ = `${CDN}/f_auto,q_80,w_1200`;      // Secciones principales
+const CARD = `${CDN}/f_auto,q_80,w_800`;      // Cards y thumbnails
 
 export const ASSETS = {
   // Hero y CTA
@@ -53,8 +53,8 @@ export const ASSETS = {
   JARDIN_BW: `${HQ}/lpet-matrimonios/pareja-jardin-bw.jpg`,
   // Reutilizadas de empresariales
   CAFETALES: `${FULL}/lpet-matrimonios/pareja-arcoiris.jpg`,
-  CABANA: `${CDN_ALT}/f_auto,q_auto,w_1000/lpet/cabana-interior.png`,
-  COFFEE_TOUR: `${CDN}/f_auto,q_auto,w_1000/lpet-eventos/coffee-tour-guiado.png`,
+  CABANA: `${CDN_ALT}/f_auto,q_80,w_1200/lpet/cabana-interior.png`,
+  COFFEE_TOUR: `${CDN}/f_auto,q_80,w_1200/lpet-eventos/coffee-tour-guiado.png`,
 };
 
 // WHATSAPP RESERVAS

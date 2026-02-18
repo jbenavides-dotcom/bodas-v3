@@ -63,7 +63,7 @@ const WhySection: React.FC = () => {
             "No fue una boda. Fue un fin de semana que transformó nuestra relación con cada persona que estuvo ahí."
           </p>
           <p className="text-sm text-neutral-400 text-center">
-            — Valentina & Andrés, Marzo 2025
+            — Pareja casada en La Palma, 2025
           </p>
         </div>
       </div>

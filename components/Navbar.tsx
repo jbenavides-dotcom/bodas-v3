@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:flex items-center bg-[#FF8F00] hover:bg-[#F57C00] text-white px-5 sm:px-6 py-2.5 sm:py-3 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest transition-all shadow-lg active:scale-95 rounded-lg"
+            className="hidden sm:flex items-center bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 sm:px-6 py-2.5 sm:py-3 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest transition-all shadow-lg active:scale-95 rounded-lg"
             onClick={() => trackWhatsAppClick('navbar_desktop')}
           >
             Quiero Esto
@@ -53,15 +53,15 @@ const Navbar: React.FC = () => {
         isOpen ? 'max-h-[100vh]' : 'max-h-0'
       }`}>
         <div className="flex flex-col p-6 sm:p-10 space-y-6">
-          <a href="#story" className="text-xl font-serif text-white hover:text-[#FF8F00] transition-colors" onClick={() => setIsOpen(false)}>La Historia</a>
-          <a href="#gallery" className="text-xl font-serif text-white hover:text-[#FF8F00] transition-colors" onClick={() => setIsOpen(false)}>Galería</a>
-          <a href="#location" className="text-xl font-serif text-white hover:text-[#FF8F00] transition-colors" onClick={() => setIsOpen(false)}>Ubicación</a>
+          <a href="#story" className="text-xl font-serif text-white hover:text-[#DC2626] transition-colors" onClick={() => setIsOpen(false)}>La Historia</a>
+          <a href="#gallery" className="text-xl font-serif text-white hover:text-[#DC2626] transition-colors" onClick={() => setIsOpen(false)}>Galería</a>
+          <a href="#location" className="text-xl font-serif text-white hover:text-[#DC2626] transition-colors" onClick={() => setIsOpen(false)}>Ubicación</a>
           <a
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => { trackWhatsAppClick('navbar_mobile'); setIsOpen(false); }}
-            className="bg-[#FF8F00] hover:bg-[#F57C00] text-white px-6 py-4 text-center text-xs font-bold uppercase tracking-widest mt-4 active:scale-95 transition-transform rounded-xl"
+            className="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-6 py-4 text-center text-xs font-bold uppercase tracking-widest mt-4 active:scale-95 transition-transform rounded-xl"
           >
             Quiero Esto
           </a>

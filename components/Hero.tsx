@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-[#FF8F00] text-white px-8 sm:px-12 py-4 sm:py-5 font-bold uppercase text-xs sm:text-sm tracking-widest hover:bg-[#F57C00] hover:scale-105 transition-all shadow-2xl rounded-lg active:scale-95"
+          className="inline-flex items-center gap-3 bg-[#DC2626] text-white px-8 sm:px-12 py-4 sm:py-5 font-bold uppercase text-xs sm:text-sm tracking-widest hover:bg-[#B91C1C] hover:scale-105 transition-all shadow-2xl rounded-lg active:scale-95"
           onClick={() => trackWhatsAppClick('hero_cta')}
         >
           Esto Es Lo Que Quiero

@@ -49,7 +49,7 @@ const EventTypes: React.FC = () => {
 
           {/* Columna derecha - La Palma */}
           <div className="bg-brand-dark rounded-2xl p-8 sm:p-10 border border-white/10">
-            <h3 className="text-[#FF8F00] font-bold uppercase text-xs tracking-widest mb-8">Tu boda en La Palma</h3>
+            <h3 className="text-[#DC2626] font-bold uppercase text-xs tracking-widest mb-8">Tu boda en La Palma</h3>
             <ul className="space-y-5">
               {laPalma.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">

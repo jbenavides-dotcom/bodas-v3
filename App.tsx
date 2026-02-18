@@ -11,7 +11,7 @@ import Testimonials from './components/Testimonials';
 import Gallery from './components/Gallery';
 import Sustainability from './components/Sustainability';
 import LocationSection from './components/LocationSection';
-import { BOOKING_URL, SOCIAL_LINKS, CONTACT_INFO } from './constants';
+import { BOOKING_URL, ASSETS, SOCIAL_LINKS, CONTACT_INFO } from './constants';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { trackWhatsAppClick, trackEmailClick, trackPhoneClick, trackSocialClick, initScrollTracking } from './hooks/useAnalytics';
 
@@ -33,13 +33,17 @@ const App: React.FC = () => {
         <Sustainability />
         <LocationSection />
 
-        {/* CTA Final - Minimalista */}
-        <section className="py-24 sm:py-32 lg:py-44 bg-brand-light">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-            <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-brand-dark mb-6 sm:mb-8">
+        {/* CTA Final */}
+        <section className="relative py-28 sm:py-36 lg:py-48 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img src={ASSETS.CTA_BG} className="w-full h-full object-cover" alt="" loading="lazy" />
+            <div className="absolute inset-0 bg-black/60"></div>
+          </div>
+          <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white mb-6 sm:mb-8">
               <span className="italic">¿Es aquí?</span>
             </h3>
-            <p className="text-neutral-400 text-base sm:text-lg font-light mb-10 sm:mb-14">
+            <p className="text-white/60 text-lg sm:text-xl md:text-2xl font-light mb-12 sm:mb-16">
               Solo hay una forma de saberlo.
             </p>
             <a
@@ -51,10 +55,10 @@ const App: React.FC = () => {
             >
               Escribir por WhatsApp <ArrowRight className="w-5 h-5" />
             </a>
-            <p className="mt-6 text-neutral-300 text-xs">
+            <p className="mt-6 text-white/30 text-xs">
               <a
                 href={`mailto:${CONTACT_INFO.email}?subject=Consulta boda en La Palma & El Tucán`}
-                className="hover:text-neutral-500 transition-colors"
+                className="hover:text-white/60 transition-colors"
                 onClick={() => trackEmailClick('cta_final')}
               >
                 o escríbenos a {CONTACT_INFO.email}

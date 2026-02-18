@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* La Palma & El Tucán - EVENTOS - Custom Theme */
+@theme {
+  --color-brand-pink: #E8838C;
+  --color-brand-gold: #C9A227;
+  --color-brand-navy: #1E1E3F;
+  --color-brand-beige: #D4C5B0;
+  --color-brand-green: #2D5A3D;
+  --color-brand-dark: #1a1a1a;
+  --color-brand-light: #F5F1EB;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Animaciones personalizadas */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #E8838C;
+  color: white;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #E8838C;
+  outline-offset: 2px;
+}
+
+/* Scroll Reveal Animations */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-hidden-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-hidden-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-visible-x {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Luminosidad extra en todas las fotos */
+img {
+  filter: brightness(1.08) contrast(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hidden,
+  .scroll-hidden-left,
+  .scroll-hidden-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

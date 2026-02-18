@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jbenavides-dotcom.github.io/matrimonio/sitemap.xml

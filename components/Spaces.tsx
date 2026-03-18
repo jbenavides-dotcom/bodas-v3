@@ -2,35 +2,37 @@
 import React from 'react';
 import { ASSETS } from '../constants';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-
-const experiences = [
-  {
-    image: ASSETS.COFFEE_TOUR,
-    title: 'Van a cosechar café de campeonato mundial',
-    text: 'Tus invitados van a caminar entre cafetales Gesha y Sidra, cosechando cerezas con sus propias manos.',
-  },
-  {
-    image: ASSETS.MESA_RECEPCION,
-    title: 'Van a cenar bajo las estrellas entre cafetales',
-    text: 'Mesa larga, luces colgantes, gastronomía farm-to-table. Todo crece a metros de donde cenan.',
-  },
-  {
-    image: ASSETS.CABANA,
-    title: 'Van a despertar con colibríes en su balcón',
-    text: '10 cabañas boutique rodeadas de bosque de niebla. Cada invitado vive la experiencia completa.',
-  },
-];
+import { useI18n } from '../i18n';
 
 const Spaces: React.FC = () => {
   const reveal = useScrollReveal();
+  const { t } = useI18n();
+
+  const experiences = [
+    {
+      image: ASSETS.COFFEE_TOUR,
+      title: t('spaces.0.title'),
+      text: t('spaces.0.text'),
+    },
+    {
+      image: ASSETS.MESA_RECEPCION,
+      title: t('spaces.1.title'),
+      text: t('spaces.1.text'),
+    },
+    {
+      image: ASSETS.CABANA,
+      title: t('spaces.2.title'),
+      text: t('spaces.2.text'),
+    },
+  ];
 
   return (
     <section id="spaces" className="py-16 sm:py-24 lg:py-32 bg-brand-light">
       <div ref={reveal.ref} className={`max-w-7xl mx-auto px-4 sm:px-6 ${reveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
-        <p className="text-brand-pink text-xs uppercase tracking-[0.4em] font-bold mb-4 text-center">La experiencia</p>
+        <p className="text-brand-pink text-xs uppercase tracking-[0.4em] font-bold mb-4 text-center">{t('spaces.badge')}</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-brand-dark mb-12 sm:mb-16 text-center">
-          La boda que tus invitados <br className="hidden sm:block" />
-          <span className="italic text-brand-pink">van a recordar</span>
+          {t('spaces.title.pre')}<br className="hidden sm:block" />
+          <span className="italic text-brand-pink">{t('spaces.title.em')}</span>
         </h2>
 
         <div className="space-y-8 sm:space-y-12">

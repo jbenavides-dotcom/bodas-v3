@@ -3,6 +3,7 @@ import React from 'react';
 import { ASSETS } from '../constants';
 import { Heart } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useI18n } from '../i18n';
 
 const galleryImages = [
   { src: ASSETS.CEREMONIA, alt: 'Ceremonia' },
@@ -18,13 +19,14 @@ const galleryImages = [
 
 const Gallery: React.FC = () => {
   const reveal = useScrollReveal();
+  const { t } = useI18n();
 
   return (
     <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-brand-dark">
       <div ref={reveal.ref} className={`max-w-6xl mx-auto px-4 sm:px-6 ${reveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
-        <p className="text-brand-pink text-xs uppercase tracking-[0.4em] font-bold mb-4 text-center">Momentos reales</p>
+        <p className="text-brand-pink text-xs uppercase tracking-[0.4em] font-bold mb-4 text-center">{t('gallery.badge')}</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-12 sm:mb-16 text-center">
-          No se puede <span className="italic text-brand-beige">inventar</span> esto
+          {t('gallery.title.pre')}<span className="italic text-brand-beige">{t('gallery.title.em')}</span>{t('gallery.title.post')}
         </h2>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-3">

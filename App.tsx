@@ -11,12 +11,16 @@ import Testimonials from './components/Testimonials';
 import Gallery from './components/Gallery';
 import Sustainability from './components/Sustainability';
 import LocationSection from './components/LocationSection';
+import Logo from './components/Logo';
 import { BOOKING_URL, ASSETS, SOCIAL_LINKS, CONTACT_INFO } from './constants';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { trackWhatsAppClick, trackEmailClick, trackPhoneClick, trackSocialClick, initScrollTracking } from './hooks/useAnalytics';
+import { useI18n } from './i18n';
 
 const App: React.FC = () => {
   useEffect(() => { initScrollTracking(); }, []);
+  const { t } = useI18n();
+
   return (
     <div className="min-h-screen bg-brand-light selection:bg-[#DC2626]/30 selection:text-brand-dark">
       <Navbar />
@@ -41,10 +45,10 @@ const App: React.FC = () => {
           </div>
           <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
             <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white mb-6 sm:mb-8">
-              <span className="italic">¿Es aquí?</span>
+              <span className="italic">{t('cta.title')}</span>
             </h3>
             <p className="text-white/60 text-lg sm:text-xl md:text-2xl font-light mb-12 sm:mb-16">
-              Solo hay una forma de saberlo.
+              {t('cta.subtitle')}
             </p>
             <a
               href={BOOKING_URL}
@@ -53,7 +57,7 @@ const App: React.FC = () => {
               className="inline-flex items-center gap-3 bg-[#DC2626] text-white px-10 sm:px-14 py-5 sm:py-6 font-bold uppercase text-xs tracking-widest hover:bg-[#B91C1C] hover:scale-105 transition-all shadow-2xl rounded-lg active:scale-95"
               onClick={() => trackWhatsAppClick('cta_final')}
             >
-              Escribir por WhatsApp <ArrowRight className="w-5 h-5" />
+              {t('cta.button')} <ArrowRight className="w-5 h-5" />
             </a>
             <p className="mt-6 text-white/30 text-xs">
               <a
@@ -61,7 +65,7 @@ const App: React.FC = () => {
                 className="hover:text-white/60 transition-colors"
                 onClick={() => trackEmailClick('cta_final')}
               >
-                o escríbenos a {CONTACT_INFO.email}
+                {t('cta.email.pre')}{CONTACT_INFO.email}
               </a>
             </p>
           </div>
@@ -71,12 +75,8 @@ const App: React.FC = () => {
       {/* Footer - Simplificado */}
       <footer id="footer" className="bg-brand-dark py-16 sm:py-20 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <span className="text-xl sm:text-2xl font-serif font-bold tracking-tight">
-              <span className="text-brand-gold">LA PALMA</span>
-              <span className="text-[#DC2626] mx-1">&</span>
-              <span className="text-brand-gold">EL TUCÁN</span>
-            </span>
+          <div className="flex justify-center mb-10">
+            <Logo variant="light" size="md" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 sm:gap-10 text-white/40 font-bold text-[10px] uppercase tracking-widest mb-10">
@@ -95,7 +95,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="text-center text-white/15 text-[8px] uppercase tracking-[0.4em] font-bold">
-            &copy; {new Date().getFullYear()} La Palma & El Tucán
+            {t('footer.copyright').replace('{year}', String(new Date().getFullYear()))}
           </div>
         </div>
       </footer>

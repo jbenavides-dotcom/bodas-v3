@@ -2,39 +2,41 @@
 import React from 'react';
 import { X, Check } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useI18n } from '../i18n';
 
 const EventTypes: React.FC = () => {
   const reveal = useScrollReveal();
+  const { t } = useI18n();
 
   const typical = [
-    '200+ invitados apretados',
-    'Flores genéricas de catálogo',
-    'Comida de banquete industrial',
-    'Fotos en escenario artificial',
-    'Salón cerrado sin ventanas',
-    'Hospedaje por tu cuenta',
+    t('compare.typical.0'),
+    t('compare.typical.1'),
+    t('compare.typical.2'),
+    t('compare.typical.3'),
+    t('compare.typical.4'),
+    t('compare.typical.5'),
   ];
 
   const laPalma = [
-    '40 invitados, finca entera tuya',
-    'Flores silvestres del bosque de niebla',
-    'Gastronomía farm-to-table de la finca',
-    'Fotos entre cafetales de clase mundial',
-    'Ceremonia al aire libre con montañas',
-    '10 cabañas boutique para todos',
+    t('compare.lp.0'),
+    t('compare.lp.1'),
+    t('compare.lp.2'),
+    t('compare.lp.3'),
+    t('compare.lp.4'),
+    t('compare.lp.5'),
   ];
 
   return (
     <section className="py-16 sm:py-24 lg:py-32 bg-white">
       <div ref={reveal.ref} className={`max-w-6xl mx-auto px-4 sm:px-6 ${reveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-brand-dark mb-12 sm:mb-16 text-center">
-          Esto <span className="italic text-brand-pink">no</span> es un salón de eventos
+          {t('compare.title.pre')}<span className="italic text-brand-pink">{t('compare.title.not')}</span>{t('compare.title.post')}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Columna izquierda - Típico */}
           <div className="bg-neutral-50 rounded-2xl p-8 sm:p-10 border border-neutral-200">
-            <h3 className="text-neutral-400 font-bold uppercase text-xs tracking-widest mb-8">Salón de eventos típico</h3>
+            <h3 className="text-neutral-400 font-bold uppercase text-xs tracking-widest mb-8">{t('compare.typical.title')}</h3>
             <ul className="space-y-5">
               {typical.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">
@@ -49,7 +51,7 @@ const EventTypes: React.FC = () => {
 
           {/* Columna derecha - La Palma */}
           <div className="bg-brand-dark rounded-2xl p-8 sm:p-10 border border-white/10">
-            <h3 className="text-[#DC2626] font-bold uppercase text-xs tracking-widest mb-8">Tu boda en La Palma</h3>
+            <h3 className="text-[#DC2626] font-bold uppercase text-xs tracking-widest mb-8">{t('compare.lp.title')}</h3>
             <ul className="space-y-5">
               {laPalma.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">

@@ -3,8 +3,11 @@ import React from 'react';
 import { BOOKING_URL, ASSETS } from '../constants';
 import { ArrowRight } from 'lucide-react';
 import { trackWhatsAppClick } from '../hooks/useAnalytics';
+import { useI18n } from '../i18n';
 
 const Hero: React.FC = () => {
+  const { t } = useI18n();
+
   return (
     <section id="hero" className="relative min-h-screen flex items-end justify-center overflow-hidden pb-20 sm:pb-28">
       <div className="absolute inset-0 z-0">
@@ -22,9 +25,9 @@ const Hero: React.FC = () => {
 
       <div className="relative z-10 w-full max-w-4xl px-4 sm:px-6 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif mb-8 sm:mb-12 leading-[1.1] text-white tracking-tight">
-          40 Personas. 10 Cabañas.<br />
-          <span className="italic text-brand-beige">Un Cafetal de Ensueño.</span><br />
-          Tu Boda.
+          {t('hero.h1.line1')}<br />
+          <span className="italic text-brand-beige">{t('hero.h1.line2')}</span><br />
+          {t('hero.h1.line3')}
         </h1>
 
         <a
@@ -34,7 +37,7 @@ const Hero: React.FC = () => {
           className="inline-flex items-center gap-3 bg-[#DC2626] text-white px-8 sm:px-12 py-4 sm:py-5 font-bold uppercase text-xs sm:text-sm tracking-widest hover:bg-[#B91C1C] hover:scale-105 transition-all shadow-2xl rounded-lg active:scale-95"
           onClick={() => trackWhatsAppClick('hero_cta')}
         >
-          Esto Es Lo Que Quiero
+          {t('hero.cta')}
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
         </a>
       </div>
